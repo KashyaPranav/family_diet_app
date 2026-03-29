@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mumma - 7-Day Vegetarian Diet Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+	:root {
+		--saffron: #E8813A;
+		--saffron-light: #F5A860;
+		--saffron-pale: #FEF3E8;
+		--green: #3A7D44;
+		--green-light: #6AAF74;
+		--green-pale: #EAF4EB;
+		--clay: #C0533D;
+		--clay-pale: #FAECEA;
+		--ink: #1C1C1C;
+		--muted: #6B6B6B;
+		--divider: #E8E0D8;
+		--bg: #FAF7F3;
+		--white: #FFFFFF;
+		--card: #FFFFFF;
+		--border-r: 14px;
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+
+	body {
+		font-family: 'DM Sans', sans-serif;
+		background: var(--bg);
+		color: var(--ink);
+		line-height: 1.6;
+	}
+
+	.header {
+		background: linear-gradient(135deg, #1C3A2A 0%, #2D5A3D 50%, #1C3A2A 100%);
+		padding: 52px 40px 44px;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+	.header::before {
+		content: '';
+		position: absolute; inset: 0;
+		background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+	.header-badge {
+		display: inline-block;
+		background: rgba(232,129,58,0.25);
+		border: 1px solid rgba(232,129,58,0.5);
+		color: #F5A860;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 2.5px;
+		text-transform: uppercase;
+		padding: 5px 14px;
+		border-radius: 20px;
+		margin-bottom: 18px;
+	}
+	.header h1 {
+		font-family: 'Playfair Display', serif;
+		font-size: 42px;
+		font-weight: 700;
+		color: #FFFFFF;
+		letter-spacing: -0.5px;
+		margin-bottom: 6px;
+	}
+	.header h1 span { color: var(--saffron-light); }
+	.header-sub {
+		color: rgba(255,255,255,0.65);
+		font-size: 15px;
+		font-weight: 400;
+		margin-bottom: 32px;
+	}
+
+	.targets {
+		display: flex;
+		justify-content: center;
+		gap: 12px;
+		flex-wrap: wrap;
+		position: relative; z-index: 1;
+	}
+	.target-pill {
+		background: rgba(255,255,255,0.1);
+		border: 1px solid rgba(255,255,255,0.18);
+		backdrop-filter: blur(8px);
+		border-radius: 50px;
+		padding: 9px 20px;
+		color: #FFF;
+		font-size: 13px;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		gap: 7px;
+	}
+	.target-pill .icon { font-size: 16px; }
+	.target-pill strong { color: var(--saffron-light); }
+
+	.avoid-banner {
+		background: var(--clay-pale);
+		border-top: 3px solid var(--clay);
+		padding: 16px 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		flex-wrap: wrap;
+	}
+	.avoid-banner .label {
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: var(--clay);
+	}
+	.avoid-item {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 13px;
+		color: #8B3A2A;
+		font-weight: 500;
+	}
+
+	.main { max-width: 1080px; margin: 0 auto; padding: 40px 20px 60px; }
+
+	.daily-extras {
+		background: var(--green-pale);
+		border: 1.5px solid #B2D9B7;
+		border-radius: var(--border-r);
+		padding: 20px 28px;
+		margin-bottom: 20px;
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+	}
+	.daily-extras .de-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+	.daily-extras h3 {
+		font-family: 'Playfair Display', serif;
+		font-size: 15px;
+		color: var(--green);
+		margin-bottom: 8px;
+	}
+	.daily-extras ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+	.daily-extras ul li {
+		background: var(--white);
+		border: 1px solid #B2D9B7;
+		border-radius: 20px;
+		padding: 4px 12px;
+		font-size: 13px;
+		color: var(--green);
+		font-weight: 500;
+	}
+
+	.section-title {
+		font-family: 'Playfair Display', serif;
+		font-size: 22px;
+		color: var(--ink);
+		margin: 24px 0 20px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.section-title::after {
+		content: '';
+		flex: 1;
+		height: 1.5px;
+		background: var(--divider);
+	}
+
+	.day-card {
+		background: var(--card);
+		border-radius: 18px;
+		box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+		margin-bottom: 28px;
+		overflow: hidden;
+		border: 1px solid var(--divider);
+	}
+	.day-header {
+		background: linear-gradient(90deg, #1C3A2A, #2D5A3D);
+		padding: 16px 28px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.day-name {
+		font-family: 'Playfair Display', serif;
+		font-size: 22px;
+		color: #FFF;
+		font-weight: 700;
+	}
+	.day-date {
+		font-size: 12px;
+		color: rgba(255,255,255,0.6);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	.day-protein-badge {
+		background: var(--saffron);
+		color: #FFF;
+		font-size: 12px;
+		font-weight: 600;
+		padding: 5px 14px;
+		border-radius: 20px;
+		letter-spacing: 0.3px;
+	}
+
+	.meals-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+	}
+	.meal-cell {
+		padding: 18px 22px;
+		border-right: 1px solid var(--divider);
+		border-bottom: 1px solid var(--divider);
+	}
+	.meal-cell:nth-child(3n) { border-right: none; }
+	.meal-cell:nth-last-child(-n+3) { border-bottom: none; }
+	.meal-cell:last-child, .meal-cell:nth-last-child(2) { border-bottom: none; }
+
+	.meal-time {
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-bottom: 4px;
+	}
+	.meal-label {
+		font-family: 'Playfair Display', serif;
+		font-size: 14px;
+		font-weight: 600;
+		color: var(--ink);
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+	.meal-label .meal-icon { font-size: 16px; }
+
+	.meal-item {
+		font-size: 12.5px;
+		color: #3D3D3D;
+		line-height: 1.55;
+		padding: 3px 0;
+		display: flex;
+		align-items: flex-start;
+		gap: 6px;
+	}
+	.meal-item::before {
+		content: '·';
+		color: var(--saffron);
+		font-size: 18px;
+		line-height: 1;
+		flex-shrink: 0;
+	}
+	.meal-qty {
+		color: var(--muted);
+		font-size: 11.5px;
+	}
+
+	.protein-tag {
+		display: inline-block;
+		margin-top: 9px;
+		background: var(--green-pale);
+		border-radius: 6px;
+		padding: 4px 9px;
+		font-size: 11px;
+		font-weight: 600;
+		color: var(--green);
+	}
+
+	.meal-cell.morning { background: #FFFBF5; }
+	.meal-cell.post { background: #F5FAF6; }
+
+	.bottom-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		margin-top: 36px;
+	}
+	.info-card {
+		border-radius: var(--border-r);
+		padding: 24px 26px;
+	}
+	.info-card.avoid {
+		background: var(--clay-pale);
+		border: 1.5px solid #E2B5AC;
+	}
+	.info-card.result {
+		background: linear-gradient(135deg, #1C3A2A, #2D5A3D);
+		color: #FFF;
+	}
+	.info-card h3 {
+		font-family: 'Playfair Display', serif;
+		font-size: 17px;
+		margin-bottom: 14px;
+	}
+	.info-card.avoid h3 { color: var(--clay); }
+	.info-card.result h3 { color: var(--saffron-light); }
+	.avoid-list { list-style: none; }
+	.avoid-list li {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 13.5px;
+		color: #8B3A2A;
+		font-weight: 500;
+		padding: 5px 0;
+		border-bottom: 1px solid rgba(192,83,61,0.15);
+	}
+	.avoid-list li:last-child { border-bottom: none; }
+	.result-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		margin-bottom: 12px;
+	}
+	.result-bullet {
+		width: 28px; height: 28px;
+		background: rgba(232,129,58,0.25);
+		border: 1px solid rgba(232,129,58,0.4);
+		border-radius: 50%;
+		display: flex; align-items: center; justify-content: center;
+		font-size: 13px;
+		flex-shrink: 0;
+	}
+	.result-text { font-size: 13.5px; color: rgba(255,255,255,0.9); line-height: 1.5; }
+	.result-text strong { color: var(--saffron-light); display: block; font-size: 14px; }
+
+	@media (max-width: 720px) {
+		.meals-grid { grid-template-columns: 1fr 1fr; }
+		.meal-cell:nth-child(3n) { border-right: 1px solid var(--divider); }
+		.meal-cell:nth-child(2n) { border-right: none; }
+		.bottom-grid { grid-template-columns: 1fr; }
+		.header { padding: 36px 20px 32px; }
+		.header h1 { font-size: 30px; }
+	}
+	@media (max-width: 480px) {
+		.meals-grid { grid-template-columns: 1fr; }
+		.meal-cell { border-right: none !important; }
+	}
+
+	.page-footer {
+		text-align: center;
+		padding: 24px;
+		color: var(--muted);
+		font-size: 12px;
+		border-top: 1px solid var(--divider);
+		margin-top: 48px;
+	}
+</style>
+</head>
+<body>
+
+<div class="header">
+	<div class="header-badge">🌿 Personalised Nutrition Plan</div>
+	<h1><span>Mumma</span> — 7-Day Vegetarian Diet Plan</h1>
+	<p class="header-sub">Weight Loss + Fatty Liver + HDL + Anemia Support</p>
+	<div class="targets">
+		<div class="target-pill"><span class="icon">🔥</span> Calories: <strong>1300-1500 kcal/day</strong></div>
+		<div class="target-pill"><span class="icon">🫓</span> Roti: <strong>1 roti = 30g flour</strong></div>
+		<div class="target-pill"><span class="icon">🫒</span> Oil: <strong>max 10-15g/day</strong></div>
+		<div class="target-pill"><span class="icon">🥜</span> Nuts: <strong>10-20g/day</strong></div>
+	</div>
+</div>
+
+<div class="avoid-banner">
+	<span class="label">🚫 Strictly Avoid</span>
+	<span class="avoid-item">🍟 Fried Food</span>
+	<span class="avoid-item">🍬 Sugar (tea ≤ 1 tsp or avoid)</span>
+	<span class="avoid-item">🥐 Bakery Items</span>
+	<span class="avoid-item">🍞 White Bread</span>
+	<span class="avoid-item">🍚 Excess Rice</span>
+</div>
+
+<div class="main">
+
+	<div class="daily-extras">
+		<div class="de-icon">⚖️</div>
+		<div>
+			<h3>Important Portion Guidelines</h3>
+			<ul>
+				<li>🫓 1 roti = 30g flour</li>
+				<li>🍚 Rice (raw) = 50-60g per meal max</li>
+				<li>🫒 Oil = max 10-15g/day total</li>
+				<li>🥜 Nuts = 10-20g/day only</li>
+				<li>🧀 Paneer = 70-80g per serving</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="daily-extras">
+		<div class="de-icon">🟢</div>
+		<div>
+			<h3>Bonus Add-ons (Daily)</h3>
+			<ul>
+				<li>🥬 Spinach / greens at least 100g/day</li>
+				<li>🫜 Beetroot 3-4 times/week (100g)</li>
+				<li>🍯 Jaggery 5-10g occasionally (for anemia)</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Monday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Monday</div>
+				<div class="day-date">Day 1 · Week Start</div>
+			</div>
+			<div class="day-protein-badge">Balanced Deficit Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Empty Stomach</div>
+				<div class="meal-label"><span class="meal-icon">🌞</span>Morning</div>
+				<div class="meal-item">Warm water + lemon <span class="meal-qty">— 250 ml</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥣</span>Breakfast</div>
+				<div class="meal-item">Vegetable poha <span class="meal-qty">— 60g raw poha + 100g veggies + 5g oil + 10g peanuts</span></div>
+				<div class="meal-item">Papaya <span class="meal-qty">— 150g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🍛</span>Lunch</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour total)</span></div>
+				<div class="meal-item">Dal <span class="meal-qty">— 150g cooked (~40g raw dal)</span></div>
+				<div class="meal-item">Lauki sabzi <span class="meal-qty">— 150g + 5g oil</span></div>
+				<div class="meal-item">Salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">☕</span>Evening Snack</div>
+				<div class="meal-item">Roasted chana <span class="meal-qty">— 30g</span></div>
+				<div class="meal-item">Green tea</div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🍽️</span>Dinner</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 1-2 (40-60g flour)</span></div>
+				<div class="meal-item">Paneer bhurji <span class="meal-qty">— 80g paneer + 100g veggies + 5g oil</span></div>
+				<div class="meal-item">Salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">🫒</span>Intake Control</div>
+				<div class="meal-item">Keep oil under 10-15g for the day</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Tuesday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Tuesday</div>
+				<div class="day-date">Day 2</div>
+			</div>
+			<div class="day-protein-badge">Fiber + Protein Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥘</span>Breakfast</div>
+				<div class="meal-item">Vegetable upma <span class="meal-qty">— 60g suji + 100g veggies + 5g oil</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🍚</span>Lunch</div>
+				<div class="meal-item">Brown rice <span class="meal-qty">— 60g raw (~180g cooked)</span></div>
+				<div class="meal-item">Rajma <span class="meal-qty">— 150g cooked (~50g raw)</span></div>
+				<div class="meal-item">Salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">🥛</span>Snack</div>
+				<div class="meal-item">Buttermilk <span class="meal-qty">— 200 ml</span></div>
+				<div class="meal-item">Almonds <span class="meal-qty">— 10g (6-8 pieces)</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🥬</span>Dinner</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour)</span></div>
+				<div class="meal-item">Mixed veg <span class="meal-qty">— 150g + 5g oil</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">💧</span>Hydration</div>
+				<div class="meal-item">Spread water intake evenly through the day</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Wednesday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Wednesday</div>
+				<div class="day-date">Day 3 · Mid-Week</div>
+			</div>
+			<div class="day-protein-badge">Light Dinner Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥞</span>Breakfast</div>
+				<div class="meal-item">Moong dal chilla <span class="meal-qty">— 60g raw dal batter + 5g oil</span></div>
+				<div class="meal-item">Green chutney <span class="meal-qty">— 20g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🫘</span>Lunch</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour)</span></div>
+				<div class="meal-item">Chole <span class="meal-qty">— 150g cooked (~50g raw)</span></div>
+				<div class="meal-item">Salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">🍎</span>Snack</div>
+				<div class="meal-item">Fruit <span class="meal-qty">— 150g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🥣</span>Dinner</div>
+				<div class="meal-item">Veg soup <span class="meal-qty">— 250 ml</span></div>
+				<div class="meal-item">Roti <span class="meal-qty">— 1 (30g flour)</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">🌙</span>Night Routine</div>
+				<div class="meal-item">Keep dinner early and light for liver support</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Thursday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Thursday</div>
+				<div class="day-date">Day 4</div>
+			</div>
+			<div class="day-protein-badge">Iron Support Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥣</span>Breakfast</div>
+				<div class="meal-item">Oats <span class="meal-qty">— 40g oats + 200 ml milk + 10g nuts</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🥬</span>Lunch</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour)</span></div>
+				<div class="meal-item">Palak dal <span class="meal-qty">— 150g</span></div>
+				<div class="meal-item">Beetroot salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">🍿</span>Snack</div>
+				<div class="meal-item">Roasted makhana <span class="meal-qty">— 25g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🥗</span>Dinner</div>
+				<div class="meal-item">Paneer salad <span class="meal-qty">— 80g paneer + 150g veggies</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">🫜</span>Anemia Support</div>
+				<div class="meal-item">Beetroot + greens together helps micronutrient intake</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Friday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Friday</div>
+				<div class="day-date">Day 5</div>
+			</div>
+			<div class="day-protein-badge">Gut-Friendly Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥟</span>Breakfast</div>
+				<div class="meal-item">Idli <span class="meal-qty">— 3 small (~150g total)</span></div>
+				<div class="meal-item">Sambar <span class="meal-qty">— 150 ml</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🍛</span>Lunch</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour)</span></div>
+				<div class="meal-item">Bhindi <span class="meal-qty">— 150g + 5g oil</span></div>
+				<div class="meal-item">Dal <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">🥥</span>Snack</div>
+				<div class="meal-item">Coconut water <span class="meal-qty">— 200 ml</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🍲</span>Dinner</div>
+				<div class="meal-item">Khichdi <span class="meal-qty">— 50g rice + 30g dal (cooked ~250g)</span></div>
+				<div class="meal-item">Curd <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">🧂</span>Salt Check</div>
+				<div class="meal-item">Keep packaged or salty foods minimal</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Saturday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Saturday</div>
+				<div class="day-date">Day 6 · Weekend</div>
+			</div>
+			<div class="day-protein-badge">Controlled Weekend Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥪</span>Breakfast</div>
+				<div class="meal-item">Veg sandwich <span class="meal-qty">— 2 brown bread (60g) + 100g veggies + 5g butter</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🍚</span>Lunch</div>
+				<div class="meal-item">Brown rice <span class="meal-qty">— 60g raw</span></div>
+				<div class="meal-item">Kadhi <span class="meal-qty">— 150g</span></div>
+				<div class="meal-item">Salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">🥜</span>Snack</div>
+				<div class="meal-item">Peanuts <span class="meal-qty">— 20g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🫘</span>Dinner</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour)</span></div>
+				<div class="meal-item">Soya chunk sabzi <span class="meal-qty">— 40g dry soya + 100g veggies</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">🥜</span>Nuts Limit</div>
+				<div class="meal-item">Do not cross 10-20g nuts/seeds for the day</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-title">🗓️ Sunday</div>
+	<div class="day-card">
+		<div class="day-header">
+			<div>
+				<div class="day-name">Sunday</div>
+				<div class="day-date">Day 7 · Week End</div>
+			</div>
+			<div class="day-protein-badge">Reset + Recovery Day</div>
+		</div>
+		<div class="meals-grid">
+			<div class="meal-cell morning">
+				<div class="meal-time">Breakfast</div>
+				<div class="meal-label"><span class="meal-icon">🥣</span>Breakfast</div>
+				<div class="meal-item">Dalia <span class="meal-qty">— 50g raw + 200 ml milk</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Lunch</div>
+				<div class="meal-label"><span class="meal-icon">🧀</span>Lunch</div>
+				<div class="meal-item">Roti <span class="meal-qty">— 2 (60g flour)</span></div>
+				<div class="meal-item">Paneer curry <span class="meal-qty">— 80g paneer + 100g gravy</span></div>
+				<div class="meal-item">Salad <span class="meal-qty">— 100g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Snack</div>
+				<div class="meal-label"><span class="meal-icon">🍉</span>Snack</div>
+				<div class="meal-item">Fruit <span class="meal-qty">— 150g</span></div>
+			</div>
+			<div class="meal-cell">
+				<div class="meal-time">Dinner</div>
+				<div class="meal-label"><span class="meal-icon">🥣</span>Dinner</div>
+				<div class="meal-item">Veg soup <span class="meal-qty">— 250 ml</span></div>
+				<div class="meal-item">Roti <span class="meal-qty">— 1 (30g flour)</span></div>
+			</div>
+			<div class="meal-cell post">
+				<div class="meal-time">Daily Focus</div>
+				<div class="meal-label"><span class="meal-icon">📋</span>Weekly Review</div>
+				<div class="meal-item">Prepare veggies and grains for next week portions</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom-grid">
+		<div class="info-card avoid">
+			<h3>🚫 Foods to Avoid</h3>
+			<ul class="avoid-list">
+				<li>🍟 Fried food</li>
+				<li>🍬 Sugar-heavy drinks and sweets</li>
+				<li>🥐 Bakery and refined flour items</li>
+				<li>🍞 White bread</li>
+				<li>🍚 Excess rice portions</li>
+			</ul>
+		</div>
+		<div class="info-card result">
+			<h3>🎯 Expected Outcome</h3>
+			<div class="result-item">
+				<div class="result-bullet">4W</div>
+				<div class="result-text">
+					<strong>2-4 kg weight loss/month</strong>
+					Controlled portions and calorie deficit support steady fat loss
+				</div>
+			</div>
+			<div class="result-item">
+				<div class="result-bullet">HDL</div>
+				<div class="result-text">
+					<strong>Improved HDL profile</strong>
+					Better fat quality and fiber intake helps heart markers
+				</div>
+			</div>
+			<div class="result-item">
+				<div class="result-bullet">LVR</div>
+				<div class="result-text">
+					<strong>Fatty liver reversal (early stage)</strong>
+					Regular adherence + low-oil meals supports liver recovery
+				</div>
+			</div>
+			<div class="result-item">
+				<div class="result-bullet">Hb</div>
+				<div class="result-text">
+					<strong>Better hemoglobin support</strong>
+					Include greens, beetroot, and occasional jaggery as planned
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="page-footer">
+	Personalised plan for <strong>Mumma</strong> · Consult your doctor or dietitian before starting · All quantities are approximate guidelines
+</div>
+
+</body>
+</html>
